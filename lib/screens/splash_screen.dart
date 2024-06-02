@@ -46,6 +46,8 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState() {
     super.initState();
 
+    print("Splash scereen");
+
     // Wait until the widget is done building
     WidgetsBinding.instance.addPostFrameCallback(
       (timestamp) async {

@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_signin_button/button_list.dart';
 import 'package:flutter_signin_button/button_view.dart';
-import 'package:google_sign_in/google_sign_in.dart';
+import 'package:kandy_vpn/screens/home_screen.dart';
+import 'package:kandy_vpn/widgets/app_bar.dart';
 import 'package:kandy_vpn/widgets/logo.dart';
 
 class SignupScreen extends StatelessWidget {
@@ -12,15 +13,11 @@ class SignupScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Row(
-          children: [
-            Logo(radius: 20.0,),
-            const SizedBox(width: 20.0,),
-            Text("Signin"),
-          ],
+        title: const LogoAppBarTitle(
+          title: "Signin",
         ),
       ),
-      body: Container(
+      body: SizedBox(
         width: double.infinity,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
@@ -44,6 +41,7 @@ class SignupScreen extends StatelessWidget {
                 Buttons.Google,
                 onPressed: () {
                   print("Sign in with Google");
+                  Navigator.pushReplacementNamed(context, HomeScreen.routeName);
                 },
               ),
             ),
